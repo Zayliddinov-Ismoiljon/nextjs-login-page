@@ -39,7 +39,7 @@ export default function Login() {
   });
 
   return (
-    <PublicLayout>
+    <>
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-blue-100 to-white">
         <div className="bg-white/60 backdrop-blur-lg shadow-xl rounded-2xl p-8 w-full max-w-sm">
           <div className="flex justify-center mb-4">
@@ -120,6 +120,6 @@ export default function Login() {
           </div>
         </div>
       </div>
-    </PublicLayout>
+    </>
   );
 }

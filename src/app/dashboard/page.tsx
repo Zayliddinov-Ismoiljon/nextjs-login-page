@@ -1,8 +1,19 @@
 "use client";
 
 import PriviteLayout from "@/components/layout/privite_layout";
+import Cookies from "js-cookie";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function Dashboard() {
+  const token = Cookies.get("token");
+  const router = useRouter()
+
+  useEffect(() => {
+    if(!token){
+      router.push('/login')
+    }
+  }, [token])
   return (
     <PriviteLayout>
       <div className="grid grid-cols-12 gap-2">
