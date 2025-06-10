@@ -4,7 +4,6 @@ import { useRef } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useAuth } from "@/context/AuthContext";
-import PublicLayout from "@/components/layout/public_layout";
 import SubmitBtn from "@/components/button";
 import ReCAPTCHA from "react-google-recaptcha";
 
