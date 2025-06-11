@@ -34,10 +34,11 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
           setUser({ email: decoded.email });
         }
       } catch (err) {
+        console.log(err)
         logout();
       }
     }
-  }, []);
+  }, [router]);
 
   const login = async (email: string, password: string) => {
     try {
@@ -63,7 +64,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
       router.push("/dashboard");
     } catch (error) {
-      throw new Error("Invalid email or password");
+      throw new Error(`Invalid email or password ${error}`);
     }
   };
 

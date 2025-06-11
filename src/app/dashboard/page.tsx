@@ -13,7 +13,7 @@ export default function Dashboard() {
     if(!token){
       router.push('/login')
     }
-  }, [token])
+  }, [token, router])
   return (
     <PriviteLayout>
       <div className="grid grid-cols-12 gap-2">

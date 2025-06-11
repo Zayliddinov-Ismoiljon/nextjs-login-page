@@ -13,7 +13,7 @@ export default function User() {
     if(!token){
       router.push('/login')
     }
-  }, [token])
+  }, [token, router])
 
   return (
     <PriviteLayout>

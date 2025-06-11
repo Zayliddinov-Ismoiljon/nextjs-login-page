@@ -7,11 +7,12 @@ import { useAuth } from "@/context/AuthContext";
 import SubmitBtn from "@/components/button";
 import ReCAPTCHA from "react-google-recaptcha";
 
+
 const SITE_KEY = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI";
 
 export default function Login() {
   const { login } = useAuth();
-  const recaptchaRef = useRef<any>(null);
+  const recaptchaRef = useRef<HTMLDivElement | null>(null);
 
   const formik = useFormik({
     initialValues: {
@@ -30,7 +31,7 @@ export default function Login() {
       try {
         await login(values.email, values.password);
       } catch (err) {
-        setErrors({ password: "Login muvaffaqiyatsiz. Qayta urinib ko‘ring." });
+        setErrors({ password: `Login muvaffaqiyatsiz. Qayta urinib ko‘ring. ${err}` });
       } finally {
         setSubmitting(false);
       }
